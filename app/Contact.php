@@ -17,6 +17,10 @@ class Contact extends Model
         $this->attributes['birthday'] = Carbon::parse($birthday);
     }
 
+    public function scopeBirthday($query)
+    {
+        return $query->where('birthday', 'like', '%-'.date('m').'-%');
+    }
 
     public function user()
     {

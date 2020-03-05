@@ -14,8 +14,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->group(function () {
+    Route::apiResource('contacts', 'ContactController');
 });
 
 // Route::get('contacts', 'ContactController@index');
@@ -23,5 +23,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::delete('contacts/{contact}', 'ContactController@destroy');
 // Route::post('contacts', 'ContactController@store');
 // Route::patch('contacts/{contact}', 'ContactController@update');
-
-Route::apiResource('contacts', 'ContactController');
+Route::get('birthdays', 'BirthdayController@index');

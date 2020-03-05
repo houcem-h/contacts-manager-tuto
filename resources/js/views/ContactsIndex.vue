@@ -1,6 +1,6 @@
 <template>
   <div>
-      <ContactsList />
+      <ContactsList endpoint="/api/contacts" />
   </div>
 </template>
 
