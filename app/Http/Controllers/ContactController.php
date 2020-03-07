@@ -6,7 +6,6 @@ use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContactResource;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -17,7 +16,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return ContactResource::collection(Contact::all());
+        // return ContactResource::collection(Contact::all());
+        return ContactResource::collection(request()->user()->contacts);
     }
 
     /**

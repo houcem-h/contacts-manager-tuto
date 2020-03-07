@@ -11,6 +11,6 @@ class BirthdayController extends Controller
 {
     public function index()
     {
-        return ContactResource::collection(Contact::birthday()->get());
+        return ContactResource::collection(request()->user()->contacts()->birthday()->get());
     }
 }
