@@ -17,9 +17,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        // $this->authorize('viewAny', Contact::class);
-        dd(request()->user());
-        return ContactResource::collection(request()->user()->contacts);
+        return ContactResource::collection(Contact::all());
     }
 
     /**

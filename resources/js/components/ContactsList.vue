@@ -42,8 +42,6 @@ export default {
     axios.get(this.endpoint)
     .then(res => {
       this.loading =  false;
-      console.log(res.data);
-      
       this.contacts = res.data.data
     })
     .catch(err => {

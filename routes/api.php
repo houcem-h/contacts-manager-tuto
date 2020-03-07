@@ -15,12 +15,14 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->group(function () {
-    Route::apiResource('contacts', 'ContactController');
+    
 });
+
+Route::get('birthdays', 'BirthdayController@index');
+Route::apiResource('contacts', 'ContactController');
 
 // Route::get('contacts', 'ContactController@index');
 // Route::get('contacts/{contact}', 'ContactController@show');
 // Route::delete('contacts/{contact}', 'ContactController@destroy');
 // Route::post('contacts', 'ContactController@store');
 // Route::patch('contacts/{contact}', 'ContactController@update');
-Route::get('birthdays', 'BirthdayController@index');
